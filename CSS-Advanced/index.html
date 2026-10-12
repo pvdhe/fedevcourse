@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Advanced</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header__inner">
+        <div class="brand">CSS Advanced</div>
+        <nav class="site-nav">
+          <a href="#start">Start</a>
+          <a href="#les">Les</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="start" class="hero">
+        <div class="container hero__content">
+          <div>
+            <p class="eyebrow">CSS Advanced</p>
+            <h1>Responsive layouts met CSS</h1>
+            <p class="lead">
+              Je leert hoe je met Flexbox, CSS Grid en media queries een website maakt
+              die goed werkt op mobiel en desktop.
+            </p>
+            <div class="hero__actions">
+              <a href="#les" class="button button--primary">Lees verder</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h2>Belangrijk</h2>
+            <p>Flexbox</p>
+            <p>CSS Grid</p>
+            <p>Responsive design</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="les" class="section">
+        <div class="container">
+          <h2 class="section-title">Les</h2>
+        </div>
+        <div class="container lesson-grid">
+          <div class="lesson-box">
+            <h3>Flexbox</h3>
+            <p>Met Flexbox lijn je onderdelen uit of zet je ze naast elkaar.</p>
+          </div>
+
+          <div class="lesson-box">
+            <h3>CSS Grid</h3>
+            <p>Met CSS Grid verdeel je een pagina in rijen en kolommen.</p>
+          </div>
+
+          <div class="lesson-box">
+            <h3>Media queries</h3>
+            <p>Met media queries pas je de stijl aan voor mobiel en desktop.</p>
+          </div>
+
+          <div class="lesson-box">
+            <h3>Custom properties</h3>
+            <p>Met CSS-variabelen kun je kleuren en tekstgroottes opnieuw gebruiken.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <h2 class="section-title">Contact</h2>
+          <div class="contact-card">
+            <h3>CSS Advanced</h3>
+            <p>Paul van den Heuvel</p>
+            <p>Dorpstraat 1</p>
+            <p>1234 AB, Amsterdam</p>
+            <p>paul@cssadvanced.nl</p>
+            <p>0612345678</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer__inner">
+        <p>CSS Advanced - 2026</p>
+      </div>
+    </footer>
+  </body>
+</html>

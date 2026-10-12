@@ -1,0 +1,224 @@
+:root {
+  /* Variabelen bewaren kleuren zodat ze overal hetzelfde blijven. */
+  --bg: hsl(40 20% 95%);
+  --panel: hsl(0 0% 100%);
+  --text: hsl(220 18% 18%);
+  --muted: hsl(220 10% 35%);
+  --accent: hsl(24 80% 52%);
+  --border: hsl(35 20% 80%);
+
+  /* Variabelen voor de verschillende tekstgroottes. */
+  --base: 1rem;
+  --small: 0.8rem;
+  --medium: 1.1rem;
+  --title: clamp(2.4rem, 6vw, 3.8rem);
+
+  /* Algemene instellingen voor afgeronde hoeken en de maximale inhoudsbreedte. */
+  --radius: 1rem;
+  --container: 1100px;
+}
+
+/* Zorgt dat padding en randen binnen de opgegeven breedte vallen. */
+* {
+  box-sizing: border-box;
+}
+
+/* Stelt de standaard letter, kleur en regelafstand van de hele pagina in. */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: var(--base);
+}
+
+/* Haalt de standaard onderstreping van links weg en laat ze tekstkleur erven. */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Centreert de inhoud en houdt die op brede schermen binnen een maximale breedte. */
+.container {
+  width: min(var(--container), calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+/* Bovenbalk van de website met een lichte achtergrond en onderrand. */
+.site-header {
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid var(--border);
+}
+
+.header__inner,
+.hero__actions {
+  /* Flexbox zet onderdelen naast elkaar en lijnt ze verticaal uit. */
+  display: flex;
+  align-items: center;
+}
+
+/* Verdeelt de sitenaam en navigatie over de breedte van de header. */
+.header__inner {
+  justify-content: space-between;
+  min-height: 4.5rem;
+  padding: 0.2rem 0;
+}
+
+/* Geeft de sitenaam nadruk. */
+.brand {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Zet de navigatielinks naast elkaar met ruimte ertussen. */
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  font-size: var(--small);
+  color: var(--muted);
+}
+
+/* Algemene opmaak voor knoppen en actie-links. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-weight: 600;
+}
+
+/* Geeft de belangrijkste knop de accentkleur. */
+.button--primary {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* Geeft Start, Les en Contact evenveel ruimte boven en onder de inhoud. */
+.hero,
+.section {
+  padding: 3rem 0;
+}
+
+.hero__content {
+  /* CSS Grid plaatst de introductie en het informatievak in een raster. */
+  display: grid;
+  gap: 1.4rem;
+}
+
+/* Kleine opvallende tekst boven de hoofdtitel. */
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: var(--small);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Hoofdtitel van de introductie. */
+.hero h1 {
+  margin: 0;
+  font-size: var(--title);
+  line-height: 1.1;
+}
+
+/* Titel die boven een gewone pagina-sectie staat. */
+.section-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.2;
+  color: var(--text);
+}
+
+/* Inleidende tekst onder de hoofdtitel. */
+.lead {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: var(--medium);
+}
+
+/* Zet actieknoppen naast elkaar en laat ze zo nodig naar een nieuwe regel gaan. */
+.hero__actions {
+  margin-top: 1.5rem;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+/* Gedeelde achtergrond, rand, binnenruimte en schaduw voor de informatie- en lesvakken. */
+.info-card,
+.lesson-box {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.3rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.02);
+}
+
+/* Houdt koppen binnen de inhoudsvakken dicht bij de tekst eronder. */
+.info-card h2,
+.lesson-box h3,
+.contact-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* Haalt standaard marges weg en gebruikt een rustigere tekstkleur. */
+.info-card p,
+.lesson-box p,
+.contact-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Zet de lesonderwerpen in een grid; op mobiel staan ze onder elkaar. */
+.lesson-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Onderaan de pagina: donkere achtergrond met lichte tekst. */
+.site-footer {
+  background: var(--text);
+  color: white;
+  padding: 1.5rem 0;
+}
+
+/* Centreert de inhoud van de footer en laat die op smalle schermen doorlopen. */
+.footer__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+}
+
+/* Verwijdert de standaard buitenruimte rond de footertekst. */
+.footer__inner p {
+  margin: 0;
+}
+
+/* Vanaf 700px passen er twee kolommen met lesonderwerpen naast elkaar. */
+@media (min-width: 700px) {
+  .lesson-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Op brede schermen krijgt de introductie twee kolommen en de les vier. */
+@media (min-width: 980px) {
+  .hero__content {
+    grid-template-columns: 1.3fr 0.7fr;
+    align-items: center;
+  }
+
+  .lesson-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
