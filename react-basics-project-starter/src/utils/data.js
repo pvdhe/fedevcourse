@@ -1,5 +1,7 @@
 // ingredientItems bevat dezelfde regels als ingredientLines, met vaste IDs als React-keys.
 // Deze IDs zijn eenmalig aan dit bestand toegevoegd en veranderen niet bij het renderen.
+// JSON.parse zet de meegeleverde JSON-tekst om naar een JavaScript-object.
+// data.hits bevat twintig items; ieder item heeft een recipe-object met de receptgegevens.
 export const data = JSON.parse(`{
   "from": 1,
   "to": 20,

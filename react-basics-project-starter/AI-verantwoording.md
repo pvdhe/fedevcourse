@@ -167,3 +167,9 @@ Dit document houdt bij waarvoor AI tijdens dit project is gebruikt. De lijst wor
     - De leerling heeft expliciet gevraagd het project net als CSS-Advanced en JS-Advanced op GitHub te zetten in `pvdhe/fedevcourse`.
     - AI heeft gecontroleerd dat de projectmap al binnen de juiste repository staat, op branch `main`, met origin `https://github.com/pvdhe/fedevcourse.git`.
     - De publicatie bevat de broncode, configuratie, README, AI-verantwoording en het testverslag in de map `react-basics-project-starter`. De bestaande `.gitignore` sluit `node_modules`, `dist` en logbestanden uit. Het tijdelijke testscript wordt niet gepubliceerd.
+
+24. **Commentaar in het volledige project nalopen**
+    - AI heeft de comments opnieuw beoordeeld op inhoud, begrijpelijkheid en aansluiting op de huidige code. De pagina's en App waren al toegelicht; uitleg is aangevuld bij main.jsx, de themahulpfuncties, de optionele startercomponenten, de configuratie, het HTML-startpunt en het inladen van de dataset.
+    - Bij de meegeleverde tooltip-, toaster- en vaste-thema-componenten staat nu expliciet dat de receptenpagina's deze niet gebruiken. Comments leggen de belangrijke blokken uit zonder iedere losse regel te herhalen.
+    - Alleen commentaar is aangepast; de werking en vormgeving blijven gelijk. JSON-bestanden en automatisch gegenereerde bestanden krijgen geen codecomments.
+    - Controle: lint en de controle op witruimtefouten slagen. De commentaaraanvullingen worden ook naar dezelfde GitHub-repository bijgewerkt.

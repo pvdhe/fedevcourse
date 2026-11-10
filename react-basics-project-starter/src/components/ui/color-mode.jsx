@@ -21,6 +21,8 @@ export function ColorModeProvider(props) {
   )
 }
 
+// Deze meegeleverde hook geeft het actieve thema en functies om het te veranderen.
+// resolvedTheme vertaalt de systeemvoorkeur naar light of dark.
 export function useColorMode() {
   const { resolvedTheme, setTheme, forcedTheme } = useTheme()
   const colorMode = forcedTheme || resolvedTheme
@@ -34,16 +36,21 @@ export function useColorMode() {
   }
 }
 
+// Hulpfunctie uit de starter: kies een waarde die past bij het actieve thema.
+// Onze pagina's gebruiken hiervoor vooral de semantische kleuren uit theme.js.
 export function useColorModeValue(light, dark) {
   const { colorMode } = useColorMode()
   return colorMode === 'dark' ? dark : light
 }
 
+// Het pictogram laat het huidige thema zien; de knoptekst noemt het doelthema.
 export function ColorModeIcon() {
   const { colorMode } = useColorMode()
   return colorMode === 'dark' ? <LuMoon /> : <LuSun />
 }
 
+// forwardRef geeft een eventuele verwijzing door aan de echte knop.
+// ClientOnly wacht tot de component in de browser is geladen voordat de themaknop verschijnt.
 export const ColorModeButton = React.forwardRef(
   function ColorModeButton(props, ref) {
     // De knop vertelt welk thema de gebruiker met de volgende klik kiest.
@@ -75,6 +82,8 @@ export const ColorModeButton = React.forwardRef(
   },
 )
 
+// Optionele startercomponent om een deel van de interface altijd licht weer te geven.
+// Deze component wordt momenteel niet door de receptenpagina's gebruikt.
 export const LightMode = React.forwardRef(function LightMode(props, ref) {
   return (
     <Span
@@ -89,6 +98,8 @@ export const LightMode = React.forwardRef(function LightMode(props, ref) {
   )
 })
 
+// Optionele startercomponent om een deel van de interface altijd donker weer te geven.
+// Deze component wordt momenteel niet door de receptenpagina's gebruikt.
 export const DarkMode = React.forwardRef(function DarkMode(props, ref) {
   return (
     <Span

@@ -9,22 +9,27 @@ import {
   createToaster,
 } from '@chakra-ui/react'
 
+// Meegeleverde ondersteuning voor tijdelijke meldingen rechtsonder in beeld.
+// De receptenapp gebruikt deze meldingen momenteel niet.
 export const toaster = createToaster({
   placement: 'bottom-end',
   pauseOnPageIdle: true,
 })
 
+// Deze component toont de meldingen die via het toaster-object worden aangemaakt.
 export const Toaster = () => {
   return (
     <Portal>
       <ChakraToaster toaster={toaster} insetInline={{ mdDown: '4' }}>
         {(toast) => (
           <Toast.Root width={{ md: 'sm' }}>
+            {/* Tijdens laden verschijnt een spinner; anders een statuspictogram. */}
             {toast.type === 'loading' ? (
               <Spinner size='sm' color='blue.solid' />
             ) : (
               <Toast.Indicator />
             )}
+            {/* Titel, beschrijving en knoppen verschijnen alleen als ze zijn opgegeven. */}
             <Stack gap='1' flex='1' maxWidth='100%'>
               {toast.title && <Toast.Title>{toast.title}</Toast.Title>}
               {toast.description && (
