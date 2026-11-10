@@ -1,4 +1,4 @@
-# Winc recipes
+# Winc Recipes
 
 Een receptenapp voor het React Fundamentals-project, gemaakt met React, Vite en Chakra UI.
 

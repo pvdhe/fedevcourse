@@ -41,7 +41,7 @@ export const RecipeListPage = ({ onSelectRecipe }) => {
             {/* Een grotere introductie en oranje accent sluiten aan bij CSS-Advanced. */}
             <Box py={{ base: '4', md: '8' }} mb="6" maxW="720px">
                 <Text color="orange.fg" fontSize="xs" fontWeight="bold" letterSpacing="widest" textTransform="uppercase" mb="4">
-                    The Winc recipe collection
+                    The Winc Recipes collection
                 </Text>
                 <Heading as="h1" fontSize={{ base: '4xl', md: '6xl' }} letterSpacing="tight" lineHeight="1.08" mb="5">
                     Good food.

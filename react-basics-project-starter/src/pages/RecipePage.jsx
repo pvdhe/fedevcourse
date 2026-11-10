@@ -25,7 +25,7 @@ export const RecipePage = ({ recipe, onBack }) => {
                 <Image src={recipe.image} alt={recipe.label} w="100%" h={{ base: '260px', md: '420px' }} objectFit="cover" borderRadius="2xl" />
 
                 <Box minW="0">
-                    <Text color="orange.fg" fontSize="xs" fontWeight="bold" textTransform="uppercase" letterSpacing="widest" mb="3">From the Winc kitchen</Text>
+                    <Text color="orange.fg" fontSize="xs" fontWeight="bold" textTransform="uppercase" letterSpacing="widest" mb="3">From the Winc Recipes kitchen</Text>
                     <Heading as="h1" fontSize={{ base: '3xl', md: '4xl' }} letterSpacing="tight" lineHeight="short" mb="5">{recipe.label}</Heading>
 
                     {/* join maakt leesbare tekst van de arrays met maaltijd- en gerechtsoorten. */}

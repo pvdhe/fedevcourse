@@ -12,11 +12,11 @@ export const App = () => {
         // Semantische kleuren zoals bg, fg en border passen zich aan het thema aan.
         // Deze achtergrond vult ook bij weinig inhoud minimaal het hele scherm.
         <Box minH="100vh" bg="bg" color="fg" colorPalette="orange">
-            {/* Een herkenbare sitenaam links en alleen de themaknop rechtsboven. */}
+            {/* De sitenaam Winc Recipes staat links en alleen de themaknop rechtsboven. */}
             <Box as="header" borderBottomWidth="1px" borderColor="border" bg="bg.panel">
                 <Flex maxW="1200px" mx="auto" px={{ base: '4', md: '8' }} minH="76px" align="center" justify="space-between" gap="2">
                     <Text fontSize="xl" fontWeight="bold" letterSpacing="tight">
-                        <Box as="span" color="orange.fg">Winc</Box> recipes
+                        <Box as="span" color="orange.fg">Winc</Box> Recipes
                     </Text>
                     <ColorModeButton />
                 </Flex>
@@ -32,7 +32,7 @@ export const App = () => {
 
             {/* Een eenvoudige footer sluit beide pagina's visueel af. */}
             <Box as="footer" borderTopWidth="1px" borderColor="border" mt="8" py="6" px="4" textAlign="center">
-                <Text fontSize="sm" color="fg.muted">Winc recipes · A little inspiration for every table.</Text>
+                <Text fontSize="sm" color="fg.muted">Winc Recipes · A little inspiration for every table.</Text>
             </Box>
         </Box>
     );

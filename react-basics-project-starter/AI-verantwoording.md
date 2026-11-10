@@ -173,3 +173,7 @@ Dit document houdt bij waarvoor AI tijdens dit project is gebruikt. De lijst wor
     - Bij de meegeleverde tooltip-, toaster- en vaste-thema-componenten staat nu expliciet dat de receptenpagina's deze niet gebruiken. Comments leggen de belangrijke blokken uit zonder iedere losse regel te herhalen.
     - Alleen commentaar is aangepast; de werking en vormgeving blijven gelijk. JSON-bestanden en automatisch gegenereerde bestanden krijgen geen codecomments.
     - Controle: lint en de controle op witruimtefouten slagen. De commentaaraanvullingen worden ook naar dezelfde GitHub-repository bijgewerkt.
+
+25. **De sitenaam consequent schrijven**
+    - Op verzoek van de leerling heeft AI de sitenaam overal in de interface gewijzigd naar `Winc Recipes`: in de header, footer, introductie, detailpagina en browsertitel. Ook de README-titel en bijbehorende Nederlandse comments zijn bijgewerkt.
+    - Controle: lint slaagt. De wijziging wordt ook in de bestaande GitHub-repository opgenomen.
