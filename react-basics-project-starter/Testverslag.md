@@ -29,3 +29,11 @@ De productiebuild is automatisch getest met Playwright en Google Chrome, met een
 De screenshots zijn bekeken op onder andere de mobiele overzichts- en detailpagina in donker thema en het desktopoverzicht in licht thema. De test simuleert schermbreedtes; er is niet op fysieke telefoons of in Safari en Firefox getest. Er is geen volledige toegankelijkheidsaudit uitgevoerd.
 
 De receptafbeeldingen blijven afhankelijk van externe websites. De bundelgroottewaarschuwing is geen buildfout; optimalisatie daarvan is voor deze cursusopdracht niet toegevoegd.
+
+## Laatste vergelijking met de opdracht — 16 november 2026
+
+De volledige aangeleverde opdrachttekst is opnieuw naast de huidige code gelegd. De vereiste overzichts- en detailvelden, geselecteerd recept in state, zoeken, navigatie, scrollTo, Chakra-componenten, responsive instellingen, dark mode en systeemthemadetectie zijn aanwezig. Ook de optionele dieetfilters zijn geïmplementeerd.
+
+De zoekbalk accepteert nu zowel `pescetarian` uit de opdracht als `Pescatarian` uit de dataset. Datacontroles bevestigen bij beide spellingen twaalf resultaten. Daarnaast zijn de twintig recepten, gebruikte velden, zes voedingsstoffen, vaste keys en combinaties van zoeken en dieetfilter opnieuw gecontroleerd.
+
+Lint en productiebuild zijn opnieuw geslaagd; de bestaande bundelgroottewaarschuwing blijft. Deze aanvullende controle is een code-, data- en buildcontrole. De eerdere Chrome-browsertests zijn op 10 november uitgevoerd en zijn vandaag niet opnieuw uitgevoerd.

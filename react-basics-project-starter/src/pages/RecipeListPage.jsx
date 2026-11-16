@@ -12,7 +12,9 @@ export const RecipeListPage = ({ onSelectRecipe }) => {
     const [selectedDiet, setSelectedDiet] = useState('');
 
     // We negeren hoofdletters en spaties aan het begin en einde van de zoektekst.
-    const searchText = searchTerm.trim().toLowerCase();
+    // De opdracht gebruikt pescetarian; de dataset gebruikt pescatarian.
+    // Door de spelling gelijk te trekken werken beide woorden in het zoekveld.
+    const searchText = searchTerm.trim().toLowerCase().replace('pescetarian', 'pescatarian');
 
     // filter bewaart recepten waarvan de naam OF een gezondheidslabel overeenkomt.
     // includes zoekt ook op een deel van de tekst; een lege zoektekst past bij elke naam.

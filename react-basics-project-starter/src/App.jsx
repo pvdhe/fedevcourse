@@ -30,9 +30,9 @@ export const App = () => {
                 <RecipeListPage onSelectRecipe={setSelectedRecipe} />
             )}
 
-            {/* Een eenvoudige footer sluit beide pagina's visueel af. */}
+            {/* De footer toont op beide pagina's de sitenaam en het jaartal. */}
             <Box as="footer" borderTopWidth="1px" borderColor="border" mt="8" py="6" px="4" textAlign="center">
-                <Text fontSize="sm" color="fg.muted">Winc Recipes · A little inspiration for every table.</Text>
+                <Text fontSize="sm" color="fg.muted">Winc Recipes · 2026</Text>
             </Box>
         </Box>
     );

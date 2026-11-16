@@ -177,3 +177,17 @@ Dit document houdt bij waarvoor AI tijdens dit project is gebruikt. De lijst wor
 25. **De sitenaam consequent schrijven**
     - Op verzoek van de leerling heeft AI de sitenaam overal in de interface gewijzigd naar `Winc Recipes`: in de header, footer, introductie, detailpagina en browsertitel. Ook de README-titel en bijbehorende Nederlandse comments zijn bijgewerkt.
     - Controle: lint slaagt. De wijziging wordt ook in de bestaande GitHub-repository opgenomen.
+
+26. **Footertekst aanpassen**
+    - Op verzoek van de leerling heeft AI de footertekst in `src/App.jsx` gewijzigd van `Winc Recipes · A little inspiration for every table.` naar `Winc Recipes · 2026`.
+    - De bijbehorende Nederlandse comment is bijgewerkt, zodat deze de sitenaam en het jaartal beschrijft.
+
+27. **De taal van alle comments controleren**
+    - AI heeft de comments in de broncode, configuratie en het HTML-startpunt nagekeken. De uitleg staat in het Nederlands; technische namen en verwijzingen blijven in hun oorspronkelijke vorm staan.
+    - De twee resterende Engelse commentaarkopjes in `.gitignore` zijn vertaald naar `Logbestanden` en `Mappen en bestanden van editors`. De ignore-regels en de werking van de app zijn niet gewijzigd.
+
+28. **Laatste controle met de volledige opdrachttekst**
+    - AI heeft de door de leerling meegestuurde volledige opdrachttekst gelezen en vergeleken met de actuele code en het testverslag. Alle gevraagde functies en de extra challenge zijn geïmplementeerd; er zijn geen extra functies nodig.
+    - Eén klein verschil is hersteld: de zoekbalk accepteert nu zowel `pescetarian` uit de opdracht als `Pescatarian` uit de dataset. Een Nederlandse comment beschrijft deze normalisatie.
+    - Lint, productiebuild en nieuwe datacontroles slagen. De bestaande waarschuwing over de bundelgrootte blijft. De eerdere browsertests van 10 november zijn niet opnieuw uitgevoerd; dit onderscheid is opgenomen in Testverslag.md.
+    - De recente footertekst, Nederlandse gitignore-comments en deze laatste correctie worden met de bijgewerkte documentatie in dezelfde GitHub-repository opgenomen.
