@@ -43,4 +43,4 @@ Lint controleert de broncode. Build maakt de productieversie in `dist`; preview 
 
 ## AI-verantwoording
 
-Het gebruik van AI, de wijzigingen en de uitgevoerde controles staan in [AI-verantwoording.md](AI-verantwoording.md).
+Het gebruik van AI en de wijzigingen worden lokaal bijgehouden in `AI-verantwoording.md`. Dit persoonlijke overzicht wordt niet naar GitHub gestuurd en dient als hulpmiddel voor het inzendformulier. De uitgevoerde controles staan in [Testverslag.md](Testverslag.md).

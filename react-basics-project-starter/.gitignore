@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Dit persoonlijke overzicht blijft lokaal en wordt niet naar GitHub gestuurd.
+/AI-verantwoording.md
+
 # Mappen en bestanden van editors
 .vscode/*
 !.vscode/extensions.json
