@@ -17,6 +17,7 @@ const router = createBrowserRouter([
         element: <Root />,
         // Laad de gedeelde data voor alle pagina's en initialiseer daarmee de EventsProvider in Root.
         loader: eventsLoader,
+        // Toon skeletons bij de eerste lading; loaderfouten krijgen de centrale foutpagina.
         hydrateFallbackElement: <EventsPageLoading />,
         errorElement: <EventsPageError />,
         children: [

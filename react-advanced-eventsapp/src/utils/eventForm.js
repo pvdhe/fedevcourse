@@ -13,12 +13,15 @@ export const buildEventPayload = (values, categories) => ({
     description: values.description.trim(),
     image: values.image.trim(),
     location: values.location.trim(),
+    // Sla lokale formulierinvoer op als UTC, zodat teruglezen dezelfde gebeurtenistijd oplevert.
     startTime: new Date(values.startTime).toISOString(),
     endTime: new Date(values.endTime).toISOString(),
     // De checkboxwaarden zijn strings; behoud bij het opslaan de oorspronkelijke API-ID-types.
     categoryIds: categories.filter((category) => values.categoryIds.includes(String(category.id))).map((category) => category.id),
 });
 
+// POST maakt een nieuw evenement; PATCH wijzigt de opgegeven velden van een bestaand evenement.
+// encodeURIComponent voorkomt dat een ID als onderdeel van een ander URL-pad wordt geïnterpreteerd.
 export const saveEvent = async (values, categories, eventId) => {
     const editing = eventId !== undefined;
     const payload = buildEventPayload(values, categories);
@@ -32,6 +35,7 @@ export const saveEvent = async (values, categories, eventId) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
     });
+    // HTTP-fouten worden uitzonderingen, zodat de modal geen onterechte succesmelding toont.
     if (!response.ok) throw new Error('Het evenement kon niet worden opgeslagen.');
     // De Provider gebruikt het serverantwoord om de gedeelde state bij te werken.
     return response.json();

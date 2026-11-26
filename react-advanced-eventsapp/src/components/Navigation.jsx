@@ -7,6 +7,7 @@ import { Link as RouterLink, NavLink } from 'react-router-dom';
 // Deze navigatie staat via Root boven alle drie de pagina's.
 export const Navigation = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    // Een uniek menu-ID verbindt aria-controls met het menu; de ref herstelt focus na Escape.
     const menuId = useId();
     const menuButtonRef = useRef(null);
 

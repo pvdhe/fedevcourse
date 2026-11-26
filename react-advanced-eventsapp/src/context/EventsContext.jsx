@@ -6,6 +6,7 @@ import { deleteEvent as deleteEventOnServer } from '../utils/deleteEvent';
 export const EventsContext = createContext(null);
 
 export const EventsProvider = ({ initialData, children }) => {
+    // De router levert de beginwaarden; state laat alle afnemers opnieuw renderen na een wijziging.
     const [events, setEvents] = useState(initialData.events);
     const [categories, setCategories] = useState(initialData.categories);
 
@@ -15,6 +16,7 @@ export const EventsProvider = ({ initialData, children }) => {
         setCategories(initialData.categories);
     }, [initialData]);
 
+    // Geen ID betekent toevoegen; met een ID vervangen we alleen het bijbehorende evenement.
     const saveEvent = async (values, eventId) => {
         const savedEvent = await saveEventOnServer(values, categories, eventId);
         // Pas state pas aan na een geslaagd verzoek. Gebruik het volledige serverantwoord, inclusief ID.
@@ -29,6 +31,7 @@ export const EventsProvider = ({ initialData, children }) => {
         setEvents((currentEvents) => currentEvents.filter((event) => String(event.id) !== String(eventId)));
     };
 
+    // children omvat de navigatie en huidige pagina; value deelt data en acties zonder propketens.
     return (
         <EventsContext.Provider value={{ events, categories, saveEvent, deleteEvent }}>
             {children}

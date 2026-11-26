@@ -14,6 +14,7 @@ export const DeleteEventDialog = ({ event }) => {
     // Verwijderen via de Provider werkt na serversucces ook de gedeelde evenementenlijst bij.
     const { deleteEvent } = useEvents();
 
+    // Deze functie wordt pas aangeroepen na de expliciete bevestiging met de rode knop.
     const handleDelete = async () => {
         setDeleting(true);
         setError('');
@@ -35,6 +36,7 @@ export const DeleteEventDialog = ({ event }) => {
                 closable: true,
             });
         } finally {
+            // Herstel de bediening na succes of een mislukte verwijderpoging.
             setDeleting(false);
         }
     };

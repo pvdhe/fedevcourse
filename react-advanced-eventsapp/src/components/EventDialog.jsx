@@ -22,7 +22,7 @@ export const EventDialog = ({ event }) => {
             type: 'success',
             closable: true,
         });
-        // De Context is al bijgewerkt. Alleen bij toevoegen vanaf een detailpagina navigeren we terug.
+        // De Context is al bijgewerkt. Toevoegen vanaf details of About Us opent daarna het overzicht.
         if (!editing && location.pathname !== '/') navigate('/');
     };
 
@@ -104,6 +104,8 @@ const EventForm = ({ event, onSaved, onSavingChange, onCancel }) => {
     const categoryError =
         categories.length === 0 ? 'No categories available. Try again when categories are available.' : '';
     const [saveError, setSaveError] = useState('');
+    // register koppelt invoervelden; handleSubmit valideert vóór opslaan en getValues leest de begintijd.
+    // errors bevat veldmeldingen; isSubmitting blokkeert invoer tijdens het lopende opslagverzoek.
     const {
         register,
         control,
@@ -125,6 +127,7 @@ const EventForm = ({ event, onSaved, onSavingChange, onCancel }) => {
 
     // Verplichte tekst mag ook na het verwijderen van spaties niet leeg zijn.
     const requiredText = (value) => value.trim().length > 0 || 'This field is required.';
+    // Controleer de URL-opbouw en het protocol; dit garandeert niet dat de externe afbeelding bereikbaar is.
     const validateImage = (value) => {
         try {
             return (
@@ -136,6 +139,7 @@ const EventForm = ({ event, onSaved, onSavingChange, onCancel }) => {
         }
     };
 
+    // Alleen geldige formulierwaarden komen hier; de Provider verzorgt het serververzoek en de state-update.
     const submitEvent = async (values) => {
         setSaveError('');
         onSavingChange(true);
@@ -154,6 +158,7 @@ const EventForm = ({ event, onSaved, onSavingChange, onCancel }) => {
                 closable: true,
             });
         } finally {
+            // Deblokkeer de modal na zowel een geslaagd verzoek als een fout.
             onSavingChange(false);
         }
     };
@@ -205,6 +210,7 @@ const EventForm = ({ event, onSaved, onSavingChange, onCancel }) => {
                     <Field.ErrorText>{errors.location?.message}</Field.ErrorText>
                 </Field.Root>
                 <Field.Root required invalid={!!errors.startTime} disabled={isSubmitting}>
+                    {/* datetime-local gebruikt de lokale browserkiezer; step 1 staat seconden toe. */}
                     <Field.Label>
                         Start time <Field.RequiredIndicator />
                     </Field.Label>
@@ -221,6 +227,7 @@ const EventForm = ({ event, onSaved, onSavingChange, onCancel }) => {
                     <Field.ErrorText>{errors.startTime?.message}</Field.ErrorText>
                 </Field.Root>
                 <Field.Root required invalid={!!errors.endTime} disabled={isSubmitting}>
+                    {/* Vergelijk met de huidige begintijd: een eindtijd moet altijd later liggen. */}
                     <Field.Label>
                         End time <Field.RequiredIndicator />
                     </Field.Label>

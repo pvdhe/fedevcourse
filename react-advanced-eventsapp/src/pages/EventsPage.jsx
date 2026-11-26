@@ -49,6 +49,7 @@ export const EventsPage = () => {
 
     // Sorteer een kopie van de zoek-/filterresultaten; de gedeelde Context blijft ongewijzigd.
     // Vergelijk datums als tijdstempels en titels zonder verschil tussen hoofd- en kleine letters.
+    // numeric sorteert getallen in titels natuurlijk: bijvoorbeeld Event 2 vóór Event 10.
     const sortedEvents = [...filteredEvents].sort((first, second) => {
         const titleOrder = first.title.localeCompare(second.title, 'en', { sensitivity: 'base', numeric: true });
         if (sortOrder === 'title-desc') return -titleOrder;
